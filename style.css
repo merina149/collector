@@ -1,0 +1,638 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    background-color: #0A0A0B;
+    color: #F7F4F0;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* El logo por defecto en móvil (fijo arriba a la izquierda) */
+.icon {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    font-size: large;
+    font-weight: 700;
+    padding: 20px;
+    position: fixed;   /* Lo deja fijo arriba */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #121212; /* Fondo negro para que no se mezcle con el feed */
+    z-index: 1001;     /* Por encima de todo */
+    box-sizing: border-box;
+}
+
+.icon img {
+    width: 3vh;
+}
+
+/* ==========================================================================
+   1. DISEÑO PARA MÓVIL (Barra abajo, horizontal)
+   ========================================================================== */
+.nav-bar {
+    border-top: 2px solid #221F22;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #121212;
+    z-index: 1000;
+}
+
+.nav-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-button {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+    gap: 10px;               
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #F7F4F0;
+    padding: 20px 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+    text-align: center;
+    flex: 1;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  color: #E01E1B;       
+}
+
+.nav-bar svg {
+  width: 20px;
+  height: 20px;
+}
+
+body:has(#Feed:target) .nav-button[href="#Feed"],
+body:has(#Collectors:target) .nav-button[href="#Collectors"],
+body:has(#Buscar:target) .nav-button[href="#Buscar"],
+body:has(#Perfil:target) .nav-button[href="#Perfil"] {
+  color: #E01E1B; 
+}
+
+
+
+main {
+    margin-top:100px;
+    padding-bottom:90px;
+
+    
+}
+
+
+.comentario-contenedor {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:30px;
+    gap:16px;
+    
+}
+
+.ordenar-por {
+    posirion: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.ordenar-select{
+    border:none;
+    border-radius: 5px;
+    background-color: #e01e1b1a;
+    color: #8E8E93;
+    padding:5px;
+    outline: none;
+
+}
+
+.ordenar-select:hover {
+    border:none;
+    border-radius: 5px;
+    background-color: #e01e1b1a;
+    color: white;
+    padding:5px;
+    outline: none;
+
+}
+
+.ordenar-select:focus {
+    border:none;
+    border-radius: 5px;
+    background-color: #e01e1b1a;
+    color: #8E8E93;
+    padding:5px;
+    outline: none;
+
+}
+
+.comentario-contenedor h1 {
+    color: #8E8E93;
+    font-weight: 10;
+    font-size: small;
+    justify-content: left;
+}
+.comentario {
+
+    width:80vw;
+    min-width:320px;
+    height:100%;
+    background-color: transparent;
+    padding-bottom:10px;
+    
+    border-bottom: 1px solid rgba(142, 142, 147, 0.5);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:0px;
+    
+    align-self: center;
+    box-sizing: border-box;
+    
+    
+}
+
+.avatar {
+    color: #8E8E93;
+    display:flex;
+    background-color: #e01e1b6c ;
+    width:2vw;
+    min-width:50px;
+    min-height: 50px;
+    height:2vw;
+    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    padding: 0;          /* Quita el espacio interno para que la imagen llene todo */
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Ajusta y recorta la foto proporcionalmente al círculo */
+    display: block; 
+}
+
+.info-usuario {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; 
+    gap:10px;
+    padding:5px;
+    margin:0;
+    min-width: 0;
+    
+}
+
+
+.user-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50px;
+    align-items: center;
+}
+
+.fecha {
+    color: #8e8e93a4;
+    font-size: small;
+    min-width: 0;
+}
+
+.nombre-usuario {
+   color: #8E8E93;
+   font-size: small;
+   min-width: 0;
+}
+
+.estrellas {
+    font-size: x-large;
+    color: #E01E1B;
+    padding-bottom: 20px;
+}
+
+.mensaje {
+    color: #8E8E93;
+    font-size: small;
+    min-width: 0;
+}
+
+.album-name {
+    color: #ffff;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    
+}
+
+.artist-name {
+    color: rgba(255, 255, 255, 0.90); /* Blanco al 65% de opacidad */
+    font-weight: 400; /* Más delgado que el título del álbum */
+    font-size: medium;
+
+    border-left: 1px solid #8E8E93;
+    padding-left: 10px;
+    
+}
+
+.artist-name:hover {
+    color: #E01E1B; /* Rojo de tu marca */
+    font-weight: 400; /* Más delgado que el título del álbum */
+    font-size: medium;
+
+    border-left: 1px solid #8E8E93;
+    padding-left: 10px;
+    
+}
+.portada{
+    display: flex;
+    justify-content: flex-end;
+    
+    width: 7vw;
+    max-width: 100px;
+    max-height: 100px;
+    min-width: 80px;
+    height: 7vw;
+    min-height: 80px;
+    background-color: #121212;
+    border-radius: 10px;
+    overflow: hidden; /* Asegura que la imagen no sobresalga del contenedor */
+}
+.portada img {
+    width:7vw;
+    min-width: 80px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    
+}
+
+.like-save {
+    margin-top: 0px;
+   display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.like-save p {
+    color: #8E8E93;
+    font-size: x-small;
+    
+    margin-top: 2px;
+}
+
+.like-save button {
+   background-color: transparent;
+   border: 0px;
+   color: #8E8E93; ;
+
+}
+
+.like-save button:hover {
+    color: #E01E1B;
+    cursor: pointer;
+}
+
+
+.like:active svg {
+  color: #E01E1B; /* El borde cambia al rojo de tu marca */
+  fill: #E01E1B;  /* El interior se rellena por completo */
+}
+
+.save:active svg {
+  color: #E01E1B; /* El borde cambia al rojo de tu marca */
+  fill: #E01E1B;  /* El interior se rellena por completo */
+}
+
+.coment:active svg {
+  color: #E01E1B; /* El borde cambia al rojo de tu marca */
+  fill: #E01E1B;  /* El interior se rellena por completo */
+}
+
+.contenido {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:16px;
+    padding:20px;
+}
+/* Quita estilos por defecto del enlace de la portada */
+.portada-enlace {
+    text-decoration: none;
+    display: block;
+}
+
+/* El fondo del modal oculto por defecto */
+.modal-fondo {
+    display: none;             /* Oculto al cargar la página */
+    position: fixed;           /* Fijo en el centro sin importar el scroll */
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+/* LA REGLA MÁGICA: Cuando el ID "miModal" es el objetivo activo en la URL */
+.modal-fondo:target {
+    display: flex;             /* Se muestra instantáneamente al hacer clic */
+}
+
+/* La tarjeta del centro */
+.modal-contenido {
+    display: flex;
+   
+    flex-direction: column;
+    justify-content:left;
+    align-items: left;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    width: 60vw;
+    max-width: 450px;
+    min-width: 320px;
+    height:90vh;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.modal-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 450px;
+    background-color: #121212;
+    color:#8E8E93;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+   
+}
+
+.titulo-artistas h2 {
+    
+    margin-top:20px;
+    padding: 0;
+   
+}
+
+.titulo-artistas p {
+    
+    font-size: small;
+    margin-top:-10px;
+    margin-left:2px;
+    padding: 0;
+   
+}
+
+.titulo-artistas .estrellas {
+    margin:0px;
+    font-size: xxx-large;
+}
+
+.botones-modal {
+    display: flex;
+    flex-direction: row;    
+    justify-content: center;
+    gap:20px;
+    align-items: center;
+    
+}
+
+.botones-modal button {
+    width:220px;
+    margin-bottom:20px;
+    padding:20px 0 20px 0;
+    background-color: #121212;
+    color:#F7F4F0;
+    font-family: inherit;
+    font-weight: 700;
+    border: 2px solid #221F22;
+    border-radius: 10px;
+}
+
+.botones-modal button:hover {
+    width:220px;
+    margin-bottom:20px;
+    padding:20px 0 20px 0;
+    background-color: #E01E1B;
+    color:#F7F4F0;
+    font-family: inherit;
+    font-weight: 700;
+    border: 0px;
+    border-radius: 10px;
+}
+
+.en-cola {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.escuchado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.modal-contenido p {
+    color: #8E8E93;
+}
+
+.modal-cover {
+    max-width: 100%;
+    border-radius: 30px;
+}
+
+textarea  {
+    min-width:300px;
+    min-height: 112px;
+    max-width: 450px;
+    min-width: 300px;
+    background-color: #121212;
+    color: #8E8E93;
+    border:0px;
+    border-radius: 10px;
+    font-family: inherit;
+    outline:none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+hr, .separador {
+    margin-top: 20px;
+    border:0px;
+    border-top:0.1px solid #8E8E93;
+}
+.fav-save button {
+    background-color: transparent;
+    color: #8E8E93;
+    border: 0px;
+    margin:0;
+   padding:0;
+    font-family: inherit;
+    
+    cursor: pointer;
+}
+
+/* Estilos para el botón de cerrar (la X) */
+.cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 28px;
+    color: #aaa;
+    text-decoration: none;     /* Quita el subrayado del enlace */
+}
+
+.cerrar-modal:hover {
+    color: #fff;
+}
+
+/* ==========================================================================
+   2. DISEÑO PARA LAPTOP / ESCRITORIO (Barra lateral)
+   ========================================================================== */
+@media screen and (min-width: 1024px) {
+    
+      body {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        min-height: 100vh;
+        margin: 0;
+    }
+    
+    .comentario {
+        /* ... tus otros estilos ... */
+        align-self: flex-start;  /* CLAVE: Alinea al inicio para que no se vea descentrado */
+        width: 100%;           
+        max-width: 680px;      /* CLAVE: Reduce el ancho máximo para que no se vea gigante */
+        height: auto;          /* CLAVE: Quita la altura fija para que se adapte al contenido */
+        min-height: unset;     /* Resetea mínimos heredados */
+        padding-bottom: 10px;         /* Espaciado interno más elegante */
+    }
+
+   .ordenar-por {
+        max-width: 680px;      /* CLAVE: Reduce el ancho máximo para que no se vea gigante */
+    } 
+    .nombre-usuario {
+   color: #8E8E93;
+   font-size: small;
+}
+
+
+    .album-name {
+    color: #ffff;
+    font-weight: 700;
+}
+
+    .mensaje {
+        color: #8E8E93;
+        font-size: small;
+        word-break: break-word;   
+        overflow-wrap: break-word; 
+    }
+    
+    /* CORRECCIÓN DE LA BARRA LATERAL FIJA */
+    .nav-bar {
+        position: fixed;            /* 1. Mantiene el menú fijo al hacer scroll */
+        top: 0;
+        left: 0;
+        width: 260px;               
+        height: 100vh;              
+        border-top: none;
+        border-right: 2px solid #221F22;
+        display: flex;
+        flex-direction: column;     
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 100px 10px 20px 10px; 
+        box-sizing: border-box;
+        z-index: 1000;              /* Asegura que quede por encima del fondo */
+    }
+
+    /* CORRECCIÓN DEL LOGO EN ESCRITORIO */
+    .icon {
+        position: fixed;            /* 2. Mantiene el logo fijo sobre la barra */
+        top: 0;
+        left: 0;
+        width: 260px;               /* Mismo ancho que la barra lateral */
+        background-color: #121212;  /* Mismo fondo para que tape el contenido al hacer scroll */
+        padding: 20px 30px;
+        z-index: 1001;              /* Un nivel por encima de la barra */
+        box-sizing: border-box;
+    }
+
+    /* CORRECCIÓN PARA EL CONTENIDO PRINCIPAL */
+    main {
+        margin-top: 0;              /* Reseteamos el margen móvil */
+        margin-left: 260px;         /* 3. CLAVE: Empuja todo el contenido a la derecha para que no se tape */
+        padding: 40px;              /* Espaciado interno opcional para los comentarios */
+        flex-grow: 1;               /* Ocupa todo el espacio restante de la pantalla */
+    }
+
+    .nav-buttons-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-button {
+        flex-direction: row;        
+        justify-content: flex-start;
+        gap: 15px;
+        width: 100%;
+        flex: none;                 
+        padding: 14px 20px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        text-align: left;
+    }
+
+    .nav-button:hover {
+        background-color: #1C1C1C;
+        color: #E01E1B;
+    }
+
+    body:has(#Feed:target) .nav-button[href="#Feed"],
+    body:has(#Collectors:target) .nav-button[href="#Collectors"],
+    body:has(#Buscar:target) .nav-button[href="#Buscar"],
+    body:has(#Perfil:target) .nav-button[href="#Perfil"] {
+        background-color: #1C1C1C;
+        color: #E01E1B;
+    }
+}
