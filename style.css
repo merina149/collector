@@ -88,12 +88,18 @@ body:has(#Perfil:target) .nav-button[href="#Perfil"] {
 
 
 main {
-    margin-top:100px;
+    margin-top:70px;
     padding-bottom:90px;
 
     
 }
 
+.contenido {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin: 0;
+}
 
 .comentario-contenedor {
     
@@ -101,7 +107,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     margin:30px;
-    gap:16px;
+    
     
 }
 
@@ -149,40 +155,36 @@ main {
     font-weight: 10;
     font-size: small;
     justify-content: left;
+    
 }
 .comentario {
-
-    width:80vw;
+    padding-top: 20px;
+    width:70%;
     min-width:320px;
-    height:100%;
+    height: 100%;
     background-color: transparent;
-    padding-bottom:10px;
     
     border-bottom: 1px solid rgba(142, 142, 147, 0.5);
-
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap:0px;
+    justify-content: flex-start;
+    margin:0;
     
-    align-self: center;
-    box-sizing: border-box;
-    
+    align-self:center;
     
 }
 
 .avatar {
     color: #8E8E93;
     display:flex;
+    justify-content: flex-start;
     background-color: #e01e1b6c ;
     width:2vw;
     min-width:50px;
     min-height: 50px;
     height:2vw;
     
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    
     border-radius: 100%;
     padding: 0;          /* Quita el espacio interno para que la imagen llene todo */
     overflow: hidden;
@@ -197,23 +199,22 @@ main {
 
 .info-usuario {
     display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1; 
-    gap:10px;
-    padding:5px;
-    margin:0;
-    min-width: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
     
+     
 }
 
 
 .user-date {
-    display: flex;
+    
+display:flex;
     flex-direction: row;
-    justify-content: flex-start;
-    gap: 50px;
-    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    
+    
 }
 
 .fecha {
@@ -228,10 +229,15 @@ main {
    min-width: 0;
 }
 
+.portada-enlace, .portada-enlace * {
+    text-decoration: none !important;
+}
+
 .estrellas {
     font-size: x-large;
     color: #E01E1B;
-    padding-bottom: 20px;
+    
+    
 }
 
 .mensaje {
@@ -271,9 +277,7 @@ main {
     
 }
 .portada{
-    display: flex;
-    justify-content: flex-end;
-    
+   
     width: 7vw;
     max-width: 100px;
     max-height: 100px;
@@ -292,28 +296,28 @@ main {
     
 }
 
-.like-save {
-    margin-top: 0px;
-   display: flex;
+.botones-likesave {
+    display:flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin-top:10px;
 }
 
-.like-save p {
+.botones-likesave p {
     color: #8E8E93;
     font-size: x-small;
-    
+
     margin-top: 2px;
 }
 
-.like-save button {
+.botones-likesave button {
    background-color: transparent;
    border: 0px;
    color: #8E8E93; ;
 
 }
 
-.like-save button:hover {
+.botones-likesave button:hover {
     color: #E01E1B;
     cursor: pointer;
 }
@@ -334,16 +338,11 @@ main {
   fill: #E01E1B;  /* El interior se rellena por completo */
 }
 
-.contenido {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap:16px;
-    padding:20px;
+
 }
 /* Quita estilos por defecto del enlace de la portada */
 .portada-enlace {
-    text-decoration: none;
+    text-decoration: none; /* Quita el subrayado */
     display: block;
 }
 
@@ -369,7 +368,7 @@ main {
 /* La tarjeta del centro */
 .modal-contenido {
     display: flex;
-   
+    
     flex-direction: column;
     justify-content:left;
     align-items: left;
@@ -378,11 +377,13 @@ main {
     padding: 20px;
     border-radius: 16px;
     width: 60vw;
-    max-width: 450px;
+    max-width: 375px;
     min-width: 320px;
     height:90vh;
+    max-height:667px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
     position: relative;
+    box-sizing: border-box;
 }
 
 .modal-cover {
@@ -479,10 +480,9 @@ main {
 }
 
 textarea  {
-    min-width:300px;
-    min-height: 112px;
-    max-width: 450px;
-    min-width: 300px;
+    width: 100%;
+    height: 100px;
+    
     background-color: #121212;
     color: #8E8E93;
     border:0px;
