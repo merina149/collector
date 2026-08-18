@@ -88,7 +88,7 @@ body:has(#Perfil:target) .nav-button[href="#Perfil"] {
 
 
 main {
-    margin-top:70px;
+    margin-top:90px;
     padding-bottom:90px;
 
     
@@ -110,9 +110,13 @@ main {
     
     
 }
-
+.ordenar-por h1 {
+    font-size: medium;
+    color:#8E8E93;
+    font-weight: 100;
+}
 .ordenar-por {
-    posirion: fixed;
+    margin:30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -524,6 +528,8 @@ hr, .separador {
     color: #fff;
 }
 
+
+        
 /* ==========================================================================
    2. DISEÑO PARA LAPTOP / ESCRITORIO (Barra lateral)
    ========================================================================== */
@@ -548,7 +554,8 @@ hr, .separador {
     }
 
    .ordenar-por {
-        max-width: 680px;      /* CLAVE: Reduce el ancho máximo para que no se vea gigante */
+        
+        max-width: 750px;     /* CLAVE: Reduce el ancho máximo para que no se vea gigante */
     } 
     .nombre-usuario {
    color: #8E8E93;
@@ -600,12 +607,13 @@ hr, .separador {
 
     /* CORRECCIÓN PARA EL CONTENIDO PRINCIPAL */
     main {
-        margin-top: 0;              /* Reseteamos el margen móvil */
+        margin-top: 0;           /* Reseteamos el margen móvil */
         margin-left: 260px;         /* 3. CLAVE: Empuja todo el contenido a la derecha para que no se tape */
         padding: 40px;              /* Espaciado interno opcional para los comentarios */
         flex-grow: 1;               /* Ocupa todo el espacio restante de la pantalla */
     }
 
+    
     .nav-buttons-container {
         flex-direction: column;
         gap: 8px;
@@ -635,4 +643,99 @@ hr, .separador {
         background-color: #1C1C1C;
         color: #E01E1B;
     }
-}
+
+    /* ==========================================================================
+        Pestaña de Collectors
+        ========================================================================== */
+        .collector-page {
+            padding:0;
+        }
+
+        .collectors {
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            width: 100%;
+            margin: 0;
+            
+        }
+        
+        .collectors h1 {
+            font-size: large;
+        }
+
+        .collectors h2 {
+            font-size: medium;
+        }
+        .u-follow, .u-like {
+            
+            
+            width: fit-content;
+            flex:1;
+            margin:20px;
+            box-sizing: border-box;
+        } 
+        
+        .separador-uno {
+            height: 100vh;
+            border-right: 2px solid #8E8E93;
+        }
+
+        .bento {
+            margin-top: 50px;
+            padding-bottom: 20px;
+            background-color: transparent;
+            border-bottom: 1px solid #8E8E93;
+        }
+        .bento-user {
+        
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            
+        }
+
+        .subbento-avatar {
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            align-items:center;
+            gap:10px;
+        }
+
+        .bento-follow button {
+            background-color: #E01E1B;
+            color:#F7F4F0;
+            border:0px;
+            padding:5px 10px;
+            border-radius:5px;
+            margin-top:10px;
+           
+        }
+        
+        .bento-title {
+            margin-bottom:20px;
+            margin-top:30px;
+        }
+
+        .bento-cd {
+            margin-top:10px;
+            display: flex;
+            flex-direction: row;
+            gap:10px;
+
+            
+           
+        }
+
+
+        .bento-cdcover {
+            background-color: #221F22;
+            border:1px solid rgba(142, 142, 147, 0.2);
+            border-radius: 10px;
+            width:6vw;
+            height:6vw;
+            
+           
+        }
