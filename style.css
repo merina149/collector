@@ -834,6 +834,9 @@ html, body {
    ========================================================================== */
 @media screen and (min-width: 1024px) {
 
+    html, body {
+        overflow-x:visible;
+    }
     /* --- 4. Layout principal --- */
     body {
         display: flex;
