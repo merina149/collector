@@ -690,15 +690,16 @@ hr,
 /* Botones "Seguidos" / "Recomendados" que cambian de columna en móvil */
 .mini-navbar {
     z-index: 1000;
+    margin-bottom:8px;
     position: fixed;
     bottom: 85px;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    
 }
 
 .mini-navbar a {
@@ -707,21 +708,31 @@ hr,
     align-items: center;
    
     text-decoration: none;
-    background-color: #1e1e1e;
-    color: whitesmoke;
-    height: 80px;
+    
+    color: #b8b8be;
+    height: 40px;
     flex: 1;
-    border: 1px solid #0A0A0B;
+    
+    
+}
+/* Cuando #u-like está activo (target), pinta el link "Recomendados" */
+body:has(#u-like:target) .recomendados {
+  color:  #e01e1bc5;
+  border-bottom:2px solid #e01e1bc5;
 }
 
-.mini-navbar a:focus {
-    background-color: #E01E1B;
-    color: whitesmoke;
-    height: 80px;
-    flex: 1;
-    border: 1px solid #0A0A0B;
+/* Cuando #u-follow está activo, pinta el link "Seguidos" */
+body:has(#u-follow:target) .seguidos {
+  color:  #e01e1bc5;
+  border-bottom:2px solid #e01e1bc5;
 }
 
+/* Por defecto (sin ancla en la URL) "Seguidos" está activo,
+   así que lo pintamos rojo si NO hay ningún :target activo */
+body:not(:has(:target)) .seguidos {
+  color:  #e01e1bc5;
+  border-bottom:2px solid #e01e1bc5;
+}
 /* --- Tarjeta "bento" de cada colección --- */
 .bento {
     margin-top: 30px;
@@ -794,7 +805,27 @@ hr,
     flex-shrink: 0;
 }
 
+/* Oculta ambas pestañas por defecto */
+.u-follow, .u-like {
+  display: none;
+}
 
+/* Se muestra solo la que coincide con el ancla activa en la URL */
+.u-follow:target, .u-like:target {
+  display: block;
+}
+
+/* Mostrar "Seguidos" por defecto cuando no hay ancla en la URL */
+.u-follow {
+  display: block;
+}
+.u-like:target ~ .u-follow {
+  display: none;
+}
+
+html, body {
+  overflow-x: hidden;
+}
 /* ==========================================================================
    9. DISEÑO ESCRITORIO / LAPTOP (barra lateral)
    A partir de 1024px de ancho. Todo lo de aquí dentro SOBRESCRIBE
