@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collector</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="resources/iconDEF.png">
+</head>
+<body>
+
+    <!-- El logo se queda aquí arriba para el móvil -->
+    <div class="icon">
+        <img src="resources/iconadapted.svg" alt="Logo">
+        <span class="icon-text">Collector</span>
+    </div>
+
+    <!-- Barra de navegación con tus botones -->
+    <nav class="nav-bar">
+        <div class="nav-buttons-container">
+            <a class="nav-button" href="index.html">
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Feed</span>
+            </a>
+            
+            <a class="nav-button" href="collectors.html">
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Collectors</span>
+            </a>
+           
+            <a class="nav-button" href="buscar.html">
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <span>Buscar</span>
+            </a>
+            
+            <a class="nav-button" href="perfil.html">
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>Perfil</span>
+            </a>
+        </div>
+    </nav>
+<main class="buscar-seccion">
+
+<div class="buscar">
+    <h1>Buscar</h1>
+    <form class="searcher" action="search" method="GET">
+    <input type="search" class="buscador" name="q" placeholder="Busca un álbum, artista o collector" required>
+    <button type="submit" class="buscador1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.3-4.3"/>
+        </svg></button>
+    </form>
+
+    <input class="tab" type="radio" name="tab-buscar" id="tab-albumes" checked>
+    <input class="tab" type="radio" name="tab-buscar" id="tab-artistas">
+    <input class="tab" type="radio" name="tab-buscar" id="tab-collectors">
+ 
+    <div class="filtro-tabs">
+    <label class="tab" for="tab-albumes">Álbumes</label>
+    <label class="tab" for="tab-artistas">Artistas</label>
+    <label class="tab" for="tab-collectors">Collectors</label>
+  </div>
+    
+</div>
+
+<div class="para-empezar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(56, 56, 56, 1)" stroke-width="1.5
+        " stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.3-4.3"/>
+        </svg>
+    <h2>Busca algo para empezar</h2>
+    <h3>Escribe el nombre de un álbum, artista o collector y lo verás aquí al momento.</h3>
+</div>
+
+</main>
+</body>
+</html>

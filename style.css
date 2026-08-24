@@ -826,6 +826,155 @@ body:not(:has(:target)) .seguidos {
 html, body {
   overflow-x: hidden;
 }
+
+
+/* ==========================================================================
+   8.1 PÁGINA "Buscar" (móvil)
+   
+   ========================================================================== */
+.buscar-seccion {
+    width:90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+    
+}
+.buscar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    gap:20px;
+}
+
+.buscar h1 {
+    font-size: medium;
+    color: #8E8E93;
+    font-weight: 100;
+}
+
+.searcher {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap:4px;
+}
+
+.buscador {
+    color:whitesmoke;
+    background-color: transparent;
+    width:80vw;
+    height:40px;
+    border-radius: 8px;
+    border:1px solid rgba(255, 255, 255, 0.171);
+    padding:10px;
+}
+
+
+.buscador:focus {
+    color:whitesmoke;
+    background-color: transparent;
+    width:80vw;
+    height:40px;
+    border-radius: 8px;
+    border:1px solid #E01E1B;
+    outline:none;
+    padding:10px;
+}
+
+.buscador1 {
+    background-color: transparent;
+    color:whitesmoke;
+    height:40px;
+    border-radius: 8px;
+    border:1px solid rgba(255, 255, 255, 0.171);
+    padding:10px;
+}
+
+.buscador1:hover{
+    background-color: transparent;
+    color:whitesmoke;
+    height:40px;
+    border-radius: 8px;
+    border:1px solid #E01E1B;
+    padding:10px;
+}
+
+.buscador1:focus{
+    background-color: #E01E1B;
+    color:whitesmoke;
+    height:40px;
+    border-radius: 8px;
+    border:1px solid #E01E1B;
+    padding:10px;
+}
+
+.tab {
+    font-size: small;
+    background-color: transparent;
+    color:#8E8E93;
+    border:1px solid rgba(255, 255, 255, 0.071);
+    padding:10px;
+    border-radius: 24px;
+    
+}
+
+.tab:hover {
+    font-size: small;
+    background-color: transparent;
+    color:#E01E1B;
+    border:1px solid #E01E1B;
+    padding:10px;
+    border-radius: 24px;
+    
+}
+
+
+.filtro-tabs {
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    gap:8px;
+}
+
+#tab-albumes:checked ~ .filtro-tabs label[for="tab-albumes"],
+#tab-artistas:checked ~ .filtro-tabs label[for="tab-artistas"],
+#tab-collectors:checked ~ .filtro-tabs label[for="tab-collectors"] {
+    color: #E01E1B;
+    border: 1px solid #E01E1B;
+}
+
+input[name="tab-buscar"] {
+  display: none;
+}
+
+.para-empezar {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin:auto;
+    margin-top: 90px;
+    
+}
+
+
+.para-empezar h2{
+    font-size: medium;
+    margin-top:24px;
+}
+
+.para-empezar h3{
+    margin-top:0px;
+    font-size: small;
+    font-weight: 100;
+    color:#8E8E93;
+}
 /* ==========================================================================
    9. DISEÑO ESCRITORIO / LAPTOP (barra lateral)
    A partir de 1024px de ancho. Todo lo de aquí dentro SOBRESCRIBE
@@ -1005,4 +1154,13 @@ html, body {
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
+
+    .buscar-seccion {
+    margin-left:280px;
+    max-width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+   
+}
 }
