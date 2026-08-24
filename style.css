@@ -1334,4 +1334,10 @@ editar:active {
     justify-content: flex-start;
    
 }
+    .perfil {
+        margin-left:280px;
+    }
+    .fav-edit {
+        width:600px;
+    }
 }
